@@ -13,5 +13,11 @@
   <ItemGroup>
     <ProjectReference Include="..\src\TrainsProblem.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="ExpectedOutput.txt">
+      <Link>ExpectedOutput.txt</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content> 
+</ItemGroup>
 
 </Project>

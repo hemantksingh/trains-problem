@@ -5,4 +5,11 @@
     <TargetFramework>netcoreapp1.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Content Include="Input.txt">
+      <Link>Input.txt</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content> 
+</ItemGroup>
+
 </Project>
