@@ -4,7 +4,11 @@ build:
 	cd src && dotnet restore
 
 test:
-	cd test && dotnet test
+	cd test && \
+	dotnet restore && \
+	dotnet test
 
 run:
-	cd src && dotnet run
+	cd src && \
+	dotnet restore && \
+	dotnet run
