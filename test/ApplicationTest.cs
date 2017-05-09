@@ -1,8 +1,8 @@
 using System;
 using Xunit;
-using trains_problem;
+using TrainsProblem;
 
-namespace test
+namespace TrainsProblemTest
 {
     public class ApplicationTest
     {

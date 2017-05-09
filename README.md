@@ -6,7 +6,9 @@
 `make build`
 
 ## Run
-`make run`
+
+* Run with default input file `make run`
+* Run with specific input file `INPUT_FILE=<inputfile> make run`
 
 ## Test
 `make test`

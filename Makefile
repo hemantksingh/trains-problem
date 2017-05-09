@@ -1,3 +1,4 @@
+INPUT_FILE ?= input.txt
 .PHONY: build test run
 
 build:
@@ -11,4 +12,4 @@ test:
 run:
 	cd src && \
 	dotnet restore && \
-	dotnet run
+	dotnet run $(INPUT_FILE)
