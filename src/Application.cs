@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace TrainsProblem
 {
@@ -8,12 +9,14 @@ namespace TrainsProblem
     {
         public static void Main(string[] args)
         {
-            if (args.Length == 0) {
+            if (args.Length == 0)
+            {
                 Console.WriteLine("Please specify an input file.");
                 return;
             }
-            string input = GetInput(args[0]);
-            Console.WriteLine($"Input: {input}");
+            
+            IEnumerable<Route> routes = new Input(GetInput(args[0])).parseRoutes();
+            Console.WriteLine($"No of routes: {routes.Count()}");
         }
 
         private static string GetInput(string inputFile)
