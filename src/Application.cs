@@ -15,7 +15,9 @@ namespace TrainsProblem
                 return;
             }
 
-            IEnumerable<Route> routes = new Input(GetInput(args[0])).parseRoutes();
+            IEnumerable<Route> routes =new Input("Input.txt")
+                                                .FileName(args[0])
+                                                .ParseRoutes();
             var graph = new Graph(routes);
 
             Output (() => graph.CalculateDistance("A", "B", "C"));
@@ -31,21 +33,6 @@ namespace TrainsProblem
             }catch(Exception e) {
                 Console.WriteLine("Output:" + e.Message);
             }
-        }
-
-        private static string GetInput(string inputFile)
-        {
-            const string defaultInputFile = "Input.txt";
-            if (!String.IsNullOrWhiteSpace(inputFile))
-            {
-                if (File.Exists(inputFile))
-                    return File.ReadAllText(inputFile);
-                else
-                    Console.WriteLine($"Cannot find the input file '{inputFile}'");
-            }
-
-            Console.WriteLine($"Using the default input file '{defaultInputFile}'");
-            return File.ReadAllText(defaultInputFile);
         }
     }
 }
