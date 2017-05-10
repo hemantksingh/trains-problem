@@ -15,9 +15,7 @@ namespace TrainsProblem
                 return;
             }
 
-            IEnumerable<Route> routes =new Input("Input.txt")
-                                                .FileName(args[0])
-                                                .ParseRoutes();
+            IEnumerable<Route> routes =new Input(args[0]).ParseRoutes();
             var graph = new Graph(routes);
 
             Output (() => graph.CalculateDistance("A", "B", "C"));

@@ -6,18 +6,12 @@ using TrainsProblem;
 
 public class Input
 {
-    private string _fileName;
-    private readonly string _defaultInputFile;
+    private readonly string _fileName;
+    private readonly string _defaultInputFile = "Input.txt";
 
-    public Input(string defaultInputFile)
-    {
-        _defaultInputFile = defaultInputFile;
-    }
-
-    internal Input FileName(string fileName)
+    public Input(string fileName)
     {
         _fileName = fileName;
-        return this;
     }
 
     internal IEnumerable<Route> ParseRoutes()
