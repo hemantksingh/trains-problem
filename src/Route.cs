@@ -2,15 +2,15 @@ namespace TrainsProblem
 {
     public class Route
     {
-        private string from;
-        private string to;
-        private int distance;
+        public readonly string From;
+        public readonly string To;
+        public readonly int Distance;
         
         public Route(string from, string to, int distance)
         {
-            this.from = from;
-            this.to = to;
-            this.distance = distance;
+            this.From = from;
+            this.To = to;
+            this.Distance = distance;
         }
     }
 }

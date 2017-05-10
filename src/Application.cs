@@ -14,9 +14,23 @@ namespace TrainsProblem
                 Console.WriteLine("Please specify an input file.");
                 return;
             }
-            
+
             IEnumerable<Route> routes = new Input(GetInput(args[0])).parseRoutes();
-            Console.WriteLine($"No of routes: {routes.Count()}");
+            var graph = new Graph(routes);
+
+            Output (() => graph.CalculateDistance("A", "B", "C"));
+            Output (() => graph.CalculateDistance("A", "D"));            
+            Output (() => graph.CalculateDistance("A", "D", "C"));
+            Output (() => graph.CalculateDistance("A", "E", "B", "C", "D"));
+            Output (() => graph.CalculateDistance("A", "E", "D"));
+        }
+
+        private static void Output(Func<int> action) {
+            try {
+                 Console.WriteLine("Output: " + action());
+            }catch(Exception e) {
+                Console.WriteLine("Output:" + e.Message);
+            }
         }
 
         private static string GetInput(string inputFile)
